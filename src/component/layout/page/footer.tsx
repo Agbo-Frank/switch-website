@@ -1,6 +1,6 @@
 import Container from "@/component/material/container"
 import logo from "@/assets/logo/with-text.png";
-import { LinkedinIcon } from "@/component/icons";
+import { GithubIcon, LinkedinIcon, XIcon } from "@/component/icons";
 
 export default function Footer() {
   return (
@@ -16,8 +16,8 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-5">
             <LinkedinIcon className="size-[34.4px]" />
-            <LinkedinIcon className="size-[34.4px]" />
-            <LinkedinIcon className="size-[34.4px]" />
+            <GithubIcon className="size-[34.4px]" />
+            <XIcon className="size-[34.4px]" />
           </div>
         </div>
       </Container >

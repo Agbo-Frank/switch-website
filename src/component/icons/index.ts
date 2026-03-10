@@ -6,3 +6,5 @@ export * from "./box";
 export * from "./refresh";
 export * from "./code";
 export * from "./linkedin";
+export * from "./github";
+export * from "./x";

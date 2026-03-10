@@ -2,6 +2,10 @@ import { CodeIcon, RefreshIcon } from "@/component/icons";
 import { PrimaryButton, SecondaryButton } from "@/component/material/button";
 import Container from "@/component/material/container";
 import { cn } from "@/utils";
+import walletBalance from "@/assets/image/interface/wallet-balance.png";
+import depositQR from "@/assets/image/interface/deposit-qr.png";
+import chooseCurrency from "@/assets/image/interface/choose-currency.png";
+import { SectionDescription, SectionTitle } from "@/component/material/section";
 
 export default function Home() {
   return (
@@ -25,7 +29,6 @@ export default function Home() {
               </SecondaryButton>
             </div>
           </div>
-
         </div>
       </Container>
       <Container contentClassName="px-0">
@@ -58,12 +61,12 @@ export default function Home() {
         </div>
       </Container>
       <Container>
-        <div className="w-full max-w-[980px] py-[70px] flex items-start gap-[60px] mx-auto">
-          <span className="text-[50px] leading-[100%] font-tomato">A truly global layer for stablecoin payment.</span>
+        <div className="w-full max-w-[980px] py-[70px] flex items-start justify-between mx-auto">
+          <SectionTitle>A truly global layer for stablecoin payment.</SectionTitle>
           <div className="flex flex-col gap-[26.27px]">
-            <span className="text-[30px] leading-[100%] font-tomato text-white/40">
+            <SectionDescription>
               Integrate Stablecoins deposits that powers real-world flows
-            </span>
+            </SectionDescription>
             <div>
               <PrimaryButton className="py-[17.51px] max-h-[67px] px-[40px] inline-flex">
                 Book a demo
@@ -77,6 +80,62 @@ export default function Home() {
           <span className="text-[87px] text-center font-tomato font-regular leading-[57px]">How it works</span>
         </div>
       </Container>
+      <Container>
+        <div className="flex items-start justify-between py-[70px] w-full max-w-[980px] mx-auto">
+          <div className="space-y-[13px] w-full max-w-[500px]">
+            <SectionTitle>One Balance. Any Stablecoin. Any Chain</SectionTitle>
+            <SectionDescription>Single point of interaction and flow  across EVM and Solana blockchains.</SectionDescription>
+          </div>
+          <div>
+            <img src={walletBalance} className="w-[368.62px] h-auto" alt="image" />
+          </div>
+        </div>
+      </Container>
+      <Container contentClassName="px-0 bg-surface-elevated">
+        <div className="items-start justify-between flex py-[70px] w-full max-w-[980px] mx-auto">
+          <div>
+            <img src={depositQR} className="w-[390px] h-auto" alt="image" />
+          </div>
+          <div className="flex flex-col gap-[43.78px] max-w-[517px]">
+            <div className="space-y-[13px]">
+              <SectionTitle>No barriers. No limits. Max speed</SectionTitle>
+              <SectionDescription>Everything you need to collect and payout stablecoins</SectionDescription>
+            </div>
+            <PrimaryButton className="h-full w-fit py-[20.25px] px-10">
+              <span className="text-[26.76px]! font-regular leading-[100%] font-tomato">View documentation</span>
+            </PrimaryButton>
+          </div>
+        </div>
+      </Container>
+      <Container>
+        <div className="flex items-start justify-between py-[70px] w-full max-w-[980px] mx-auto">
+          <div className="space-y-[13px] w-full max-w-[508px]">
+            <SectionTitle>Cross border and local payment settlement.</SectionTitle>
+            <SectionDescription>Collect stablecoin from any chain and instantly convert to any local currency.</SectionDescription>
+          </div>
+          <div>
+            <img src={chooseCurrency} className="w-[390px] h-auto" alt="image" />
+          </div>
+        </div>
+      </Container>
+      <Container contentClassName="px-0 bg-surface-elevated">
+        <div className="center py-[70px]">
+          <div className="w- full max-w-[733px] flex flex-col gap-[35.02px] text-center mx-auto">
+            <div className="space- y-[13px]">
+              <SectionTitle>No barriers. No limits. Max speed</SectionTitle>
+              <SectionDescription>Everything you need to collect and payout stablecoins</SectionDescription>
+            </div>
+            <div className="center gap-[17.51px] h-[72px]">
+              <PrimaryButton className="h-full w-fit px-10">
+                <span className="text-[26.76px]! font-regular leading-[100%] font-tomato">Book a demo</span>
+              </PrimaryButton>
+              <SecondaryButton className="h-full w-fit px-10">
+                <span className="text-[26.76px]! font-regular leading-[100%] font-tomato">View documentation</span>
+              </SecondaryButton>
+            </div>
+          </div>
+        </div>
+      </Container >
     </>
   )
 }
