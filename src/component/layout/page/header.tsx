@@ -7,6 +7,7 @@ import {
   BoxIcon
 } from "@/component/icons";
 import Container from "@/component/material/container";
+import { NavLink } from "react-router";
 
 export default function Header() {
   return (
@@ -17,14 +18,14 @@ export default function Header() {
             <img src={logo} alt="logo" className="size-[35px]" />
           </div>
           <ul className="bg-surface-elevated text-base h-full rounded-[15.76px] border-secondary! border p-[6.13px] flex items-center gap-[8.76px]">
-            <li className="center gap-[6.38px] px-[22.14px] rounded-l-[12.75px] rounded-[6.38px] border-secondary! cursor-pointer border h-full">
+            <NavLink to="/" className="center gap-[6.38px] px-[22.14px] rounded-l-[12.75px] rounded-[6.38px] border-secondary! cursor-pointer border h-full [&.active]:bg-primary-hover [&.active]:text-primary [&.active]:border-none">
               <LightIcon className="size-4" />
               <span className="text-base">Collection</span>
-            </li>
-            <li className="center gap-[6.38px] px-[22.14px] rounded-[6.38px] border-secondary! border h-full">
+            </NavLink>
+            <NavLink to="/coverage" className="center gap-[6.38px] px-[22.14px] rounded-[6.38px] border-secondary! border h-full [&.active]:bg-primary-hover [&.active]:text-primary [&.active]:border-none">
               <SearchIcon className="size-4" />
               <span className="text-base">Coverage</span>
-            </li>
+            </NavLink>
             <li className="center gap-[6.38px] px-[22.14px] rounded-[6.38px] border-secondary! border h-full">
               <StarIcon className="size-4" />
               <span className="text-base">How it works</span>

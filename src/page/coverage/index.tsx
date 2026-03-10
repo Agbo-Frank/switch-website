@@ -1,6 +1,8 @@
 import { PrimaryButton, SecondaryButton } from "@/component/material/button";
 import Container from "@/component/material/container";
 import { SectionDescription, SectionTitle } from "@/component/material/section";
+import COUNTRIES from "./data";
+import { cn } from "@/utils";
 
 export default function Coverage() {
   return (
@@ -46,15 +48,28 @@ export default function Coverage() {
         </div>
       </Container>
 
-      <Container>
-        <div className="w-full max-w-[980px] py-[70px] flex items-start justify-between mx-auto">
-          <div className="space-y-[17px] w-full max-w-[394px]">
-            <SectionTitle>Asia</SectionTitle>
-            <SectionDescription>Send payouts to any of these supported countries.</SectionDescription>
-          </div>
-          <div></div>
-        </div>
-      </Container>
+      {
+        COUNTRIES.map(({ region, countries }, i) => (
+          <Container key={i} contentClassName={cn(i % 2 === 0 ? "bg-surface-elevated px-0" : "")}>
+            <div className="w-full max-w-[980px] py-[70px] flex items-start justify-between mx-auto">
+              <div className="space-y-[17px] w-full max-w-[394px]">
+                <SectionTitle>{region}</SectionTitle>
+                <SectionDescription>Send payouts to any of these supported countries.</SectionDescription>
+              </div>
+              <div className="grid grid-cols-3 gap-[8.76px]">
+                {
+                  countries.map(({ name, flag }, i) => (
+                    <div key={i} className="flex items-center gap-[8.57px] p-[17.51px] max-h-[69px]">
+                      <img src={flag} className="w-[41px] h-auto bg-contain" alt="image" />
+                      <span className="text-[24.96px]! leading-[100%]">{name}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </Container>
+        ))
+      }
 
       <Container contentClassName="px-0 bg-surface-elevated">
         <div className="center py-[70px]">
