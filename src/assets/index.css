@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Tomato Grotesk — place .otf files in public/fonts/ */
+@font-face {
+  font-family: "Tomato Grotesk";
+  src: url("@/assets/fonts/TomatoGrotesk-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tomato Grotesk";
+  src: url("@/assets/fonts/TomatoGrotesk-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tomato Grotesk";
+  src: url("@/assets/fonts/TomatoGrotesk-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-tomato: "Tomato Grotesk", system-ui, sans-serif;
+
+  /* Colors */
+  --color-primary: #85F0AE;
+  --color-primary-hover: #123F2F;
+  --color-secondary: #292929;
+  --color-accent: #f59e0b;
+  --color-surface: #111111;
+  --color-surface-elevated: #1D1D1D;
+  --color-muted: #64748b;
+  --color-border: #FFFFFF33;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  font-family: var(--font-tomato);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.center {
+  @apply flex items-center justify-center;
+}
