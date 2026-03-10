@@ -5,14 +5,14 @@ import {
   StarIcon,
   DocsIcon,
   BoxIcon
-} from "../icons";
-import Container from "./container";
+} from "@/component/icons";
+import Container from "@/component/material/container";
 
 export default function Header() {
   return (
     <Container>
       <div className="h-[120px] center">
-        <div className="flex justify-between h-[56.91px] items-center w-full max-w-[1100px]">
+        <div className="flex justify-between h-[56.91px] items-center w-full max-w-[1100px] mx-auto">
           <div className="bg-primary-hover w-[61.29px] h-full rounded-[12.62px] center">
             <img src={logo} alt="logo" className="size-[35px]" />
           </div>

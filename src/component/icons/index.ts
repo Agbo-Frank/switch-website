@@ -5,3 +5,4 @@ export * from "./docs";
 export * from "./box";
 export * from "./refresh";
 export * from "./code";
+export * from "./linkedin";

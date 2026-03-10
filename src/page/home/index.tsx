@@ -1,16 +1,12 @@
-import Container from "./component/material/container";
-import Headers from "./component/material/header";
-import bgImage from "./assets/image/bg/1.png";
-import bg3Image from "./assets/image/bg/3.png";
-import { PrimaryButton, SecondaryButton } from "./component/material/button";
-import { RefreshIcon, CodeIcon } from "./component/icons";
-import { cn } from "./utils";
+import { CodeIcon, RefreshIcon } from "@/component/icons";
+import { PrimaryButton, SecondaryButton } from "@/component/material/button";
+import Container from "@/component/material/container";
+import { cn } from "@/utils";
 
-function App() {
+export default function Home() {
   return (
-    <div className="bg-surface border-border text-white w-full min-h-screen">
-      <Headers />
-      <Container className={`bg-[url('${bgImage}')] bg-cover h-fit bg-center bg-no-repeat`}>
+    <>
+      <Container className={`bg-[url('/src/assets/image/bg/1.png')] bg-cover h-fit bg-center bg-no-repeat`}>
         <div
           className="center"
           style={{ height: "calc(100vh - 120px)" }}
@@ -76,13 +72,11 @@ function App() {
           </div>
         </div>
       </Container>
-      <Container className={`bg-[url('${bg3Image}')] bg-cover h-fit bg-center bg-no-repeat`}>
+      <Container className={`bg-[url('/src/assets/image/bg/3.png')] bg-cover h-fit bg-center bg-no-repeat`}>
         <div className={`w-full py-[70px] center h-full`}>
           <span className="text-[87px] text-center font-tomato font-regular leading-[57px]">How it works</span>
         </div>
       </Container>
-    </div>
+    </>
   )
 }
-
-export default App
