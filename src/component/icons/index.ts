@@ -8,3 +8,5 @@ export * from "./code";
 export * from "./linkedin";
 export * from "./github";
 export * from "./x";
+export * from "./menu";
+export * from "./close";

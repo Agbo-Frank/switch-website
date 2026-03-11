@@ -7,12 +7,26 @@ interface SectionTextProps extends PropsWithChildren {
 
 export function SectionTitle({ children, className = "" }: SectionTextProps) {
   return (
-    <p className={cn("text-[49px] leading-[100%] font-tomato", { [className]: !!className })}>{children}</p>
-  )
+    <p
+      className={cn(
+        "text-2xl sm:text-[36px] lg:text-[49px] leading-[100%] font-tomato",
+        { [className]: !!className }
+      )}
+    >
+      {children}
+    </p>
+  );
 }
 
 export function SectionDescription({ children, className = "" }: SectionTextProps) {
   return (
-    <p className={cn("text-[29px] leading-[100%] font-tomato text-white/40", { [className]: !!className })}>{children}</p>
-  )
+    <p
+      className={cn(
+        "text-base sm:text-xl lg:text-[29px] leading-[100%] font-tomato text-white/40",
+        { [className]: !!className }
+      )}
+    >
+      {children}
+    </p>
+  );
 }
