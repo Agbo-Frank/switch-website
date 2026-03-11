@@ -81,10 +81,19 @@ export default function Home() {
         </div>
       </Container>
       <Container>
-        <div className="flex items-start justify-between py-[70px] w-full max-w-[980px] mx-auto">
-          <div className="space-y-[13px] w-full max-w-[500px]">
-            <SectionTitle>One Balance. Any Stablecoin. Any Chain</SectionTitle>
-            <SectionDescription>Single point of interaction and flow  across EVM and Solana blockchains.</SectionDescription>
+        <div className="flex items-stretch justify-between py-[70px] w-full max-w-[980px] mx-auto">
+          <div className="flex flex-col justify-between w-full max-w-[500px]">
+            <div className="space-y-[13px] w-full">
+              <SectionTitle>One Balance. Any Stablecoin. Any Chain</SectionTitle>
+              <SectionDescription>Single point of interaction and flow  across EVM and Solana blockchains.</SectionDescription>
+            </div>
+            <div>
+              <ul className="h-[2.63px] flex gap-[2px]">
+                <li className="bg-[#85F0AE] w-full max-w-[17.51px] h-full inline-block rounded-full" />
+                <li className="bg-white w-full max-w-[17.51px] h-full inline-block rounded-full" />
+                <li className="bg-white w-full max-w-[17.51px] h-full inline-block rounded-full" />
+              </ul>
+            </div>
           </div>
           <div>
             <img src={walletBalance} className="w-[368.62px] h-auto" alt="image" />
@@ -108,10 +117,19 @@ export default function Home() {
         </div>
       </Container>
       <Container>
-        <div className="flex items-start justify-between py-[70px] w-full max-w-[980px] mx-auto">
-          <div className="space-y-[13px] w-full max-w-[508px]">
-            <SectionTitle>Cross border and local payment settlement.</SectionTitle>
-            <SectionDescription>Collect stablecoin from any chain and instantly convert to any local currency.</SectionDescription>
+        <div className="flex items-stretch justify-between py-[70px] w-full max-w-[980px] mx-auto">
+          <div className="flex flex-col justify-between w-full max-w-[500px]">
+            <div className="space-y-[13px] w-full">
+              <SectionTitle>Cross border and local payment settlement.</SectionTitle>
+              <SectionDescription>Collect stablecoin from any chain and instantly convert to any local currency.</SectionDescription>
+            </div>
+            <div>
+              <ul className="h-[2.63px] flex gap-[2px]">
+                <li className="bg-[#85F0AE] w-full max-w-[17.51px] h-full inline-block rounded-full" />
+                <li className="bg-white w-full max-w-[17.51px] h-full inline-block rounded-full" />
+                <li className="bg-white w-full max-w-[17.51px] h-full inline-block rounded-full" />
+              </ul>
+            </div>
           </div>
           <div>
             <img src={chooseCurrency} className="w-[390px] h-auto" alt="image" />

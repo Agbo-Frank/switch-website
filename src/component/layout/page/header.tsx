@@ -22,7 +22,7 @@ export default function Header() {
               <LightIcon className="size-4" />
               <span className="text-base">Collection</span>
             </NavLink>
-            <NavLink to="/coverage" className="center gap-[6.38px] px-[22.14px] rounded-[6.38px] border-secondary! border h-full [&.active]:bg-primary-hover [&.active]:text-primary [&.active]:border-none">
+            <NavLink to="/coverage" className="center gap-[6.38px] px-[22.14px] rounded-[6.38px] border-secondary! cursor-pointer border h-full [&.active]:bg-primary-hover [&.active]:text-primary [&.active]:border-none">
               <SearchIcon className="size-4" />
               <span className="text-base">Coverage</span>
             </NavLink>
