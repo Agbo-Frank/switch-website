@@ -7,25 +7,34 @@ import { cn } from "@/utils";
 export default function Coverage() {
   return (
     <>
-      <Container className={`bg-[url('/src/assets/image/bg/world.png')] bg-cover h-fit bg-center bg-no-repeat`}>
+      <Container className={`bg-[url('/src/assets/image/bg/1.png')] bg-cover h-fit bg-center bg-no-repeat`}>
         <div
           className="center"
           style={{ height: "calc(100vh - 120px)" }}
         >
           <div className="space-y-[52.54px]">
             <div className="text-center space-y-[13px]">
-              <h1 className="text-[87.56px] leading-[100.69px] font-semibold w-full max-w-[911px] mx-auto">
+              <h1
+                className="text-[87.56px] leading-[100.69px] font-semibold w-full max-w-[911px] mx-auto animate-hero-enter"
+                style={{ animationDelay: "0ms" }}
+              >
                 Convert deposits to over 30+ currencies.
               </h1>
-              <p className="text-[45.34px] text-white/40 leading-[100%] block w-full max-w-[934px] mx-auto">
+              <p
+                className="text-[45.34px] text-white/40 leading-[100%] block w-full max-w-[934px] mx-auto animate-hero-enter"
+                style={{ animationDelay: "150ms" }}
+              >
                 Settle payouts to 100+ countries across 30 local currencies globally in few seconds.
               </p>
             </div>
-            <div className="center gap-[17.51px] h-[73px]">
-              <PrimaryButton className="h-full w-fit px-10">
+            <div
+              className="center gap-[17.51px] h-[73px] animate-hero-enter"
+              style={{ animationDelay: "300ms" }}
+            >
+              <PrimaryButton className="h-full w-fit px-10 hover:scale-[1.02] active:scale-[0.98]">
                 <span className="text-[26.76px]! font-regular leading-[100%] font-tomato">Book a demo</span>
               </PrimaryButton>
-              <SecondaryButton className="h-full w-fit px-10">
+              <SecondaryButton className="h-full w-fit px-10 hover:scale-[1.02] active:scale-[0.98]">
                 <span className="text-[26.76px]! font-regular leading-[100%] font-tomato">Get started</span>
               </SecondaryButton>
             </div>
