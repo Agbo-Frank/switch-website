@@ -1,5 +1,5 @@
 import { CodeIcon, RefreshIcon } from "@/component/icons";
-import { PrimaryButton, SecondaryButton } from "@/component/material/button";
+import { PrimaryButton } from "@/component/material/button";
 import Container from "@/component/material/container";
 import { cn } from "@/utils";
 import walletBalance from "@/assets/image/interface/wallet-balance.png";
@@ -7,6 +7,16 @@ import depositQR from "@/assets/image/interface/deposit-qr.png";
 import chooseCurrency from "@/assets/image/interface/choose-currency.png";
 import { SectionDescription, SectionTitle } from "@/component/material/section";
 import Hero from "@/component/material/hero";
+
+function CarouselIndicator({ className = "" }: { className?: string }) {
+  return (
+    <ul className={cn("h-[2.63px] w-fit mx-auto sm:mx-0 flex gap-[2px]", { [className]: !!className })}>
+      <li className="bg-primary w-[17.51px] h-full inline-block rounded-full" />
+      <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
+      <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
+    </ul>
+  )
+}
 
 export default function Home() {
   return (
@@ -51,14 +61,16 @@ export default function Home() {
         </div>
       </Container>
       <Container>
-        <div className="w-full max-w-[980px] py-10 sm:py-[70px] flex flex-col lg:flex-row items-start justify-between sm:gap-8 gap-2 mx-auto">
-          <SectionTitle className="max-w-[500px] text-center sm:text-left">A truly global layer for stablecoin payment.</SectionTitle>
-          <div className="flex flex-col gap-6 sm:gap-[26.27px]">
-            <SectionDescription className="text-center sm:text-left">
+        <div className="w-full max-w-[980px] py-10 sm:py-[70px] flex flex-col md:flex-row items-start justify-between md:gap-8 gap-2 mx-auto">
+          <SectionTitle className="max-w-[500px] w-full mx-auto md:mx-0 text-center! md:text-left!">
+            A truly global layer for stablecoin payment.
+          </SectionTitle>
+          <div className="flex flex-col gap-6 sm:gap-[26.27px] mx-auto md:mx-0">
+            <SectionDescription>
               Integrate Stablecoins deposits that powers real-world flows
             </SectionDescription>
             <div>
-              <PrimaryButton className="h-14 sm:h-[67px] px-6 sm:px-[40px] inline-flex w-full sm:w-auto">
+              <PrimaryButton className="h-14 sm:h-[67px] px-6 sm:px-[40px] inline-flex w-full md:w-auto">
                 <span className="text-[18px] sm:text-[26.76px]! font-regular sm:leading-[100%] font-tomato">Book a demo</span>
               </PrimaryButton>
             </div>
@@ -71,68 +83,69 @@ export default function Home() {
         </div>
       </Container>
       <Container>
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 py-10 sm:py-[70px] w-full max-w-[980px] mx-auto">
-          <div className="flex flex-col justify-between gap-14 sm:gap-0 w-full max-w-[500px] order-2 lg:order-1">
-            <div className="space-y-3 sm:space-y-[13px] w-full text-center sm:text-left">
+        <div className="flex flex-col md:flex-row items-stretch justify-between gap-8 py-10 sm:py-[70px] w-full max-w-[980px] mx-auto">
+          <div className="flex flex-col justify-between gap-14 md:gap-0 w-full max-w-[500px] mx-auto md:mx-0">
+            <div className="space-y-3 sm:space-y-[13px] w-full">
               <SectionTitle>One Balance. Any Stablecoin. Any Chain</SectionTitle>
               <SectionDescription>Single point of interaction and flow  across EVM and Solana blockchains.</SectionDescription>
             </div>
-            <div>
-              <ul className="h-[2.63px] w-fit mx-auto sm:mx-0 flex gap-[2px]">
-                <li className="bg-primary w-[17.51px] h-full inline-block rounded-full" />
-                <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
-                <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
-              </ul>
+            <div className="hidden md:block">
+              <CarouselIndicator />
             </div>
           </div>
-          <div className="order-1 lg:order-2 flex items-center justify-center">
+          <div className="flex items-center justify-center sm:shrink-0">
             <img src={walletBalance} className="w-full max-w-[368.62px] h-auto" alt="Wallet balance" />
+          </div>
+          <div className="md:hidden! center">
+            <CarouselIndicator />
           </div>
         </div>
       </Container>
       <Container contentClassName="bg-surface-elevated">
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 py-10 sm:py-[70px] w-full max-w-[980px] mx-auto">
-          <div>
-            <img src={depositQR} className="w-full max-w-[390px] h-auto mx-auto lg:mx-0" alt="Deposit QR" />
+        <div className="flex flex-col md:flex-row items-stretch justify-between gap-8 py-10 sm:py-[70px] w-full max-w-[980px] mx-auto">
+          <div className="sm:shrink-0 order-2 md:order-1">
+            <img src={depositQR} className="w-full max-w-[390px] h-auto mx-auto lg:mx-0 sm:shrink-0" alt="Deposit QR" />
           </div>
-          <div className="flex flex-col justify-between gap-8 sm:gap-[43.78px] max-w-[517px] w-full">
-            <div className="space-y-[43.78px]">
+          <div className="flex flex-col justify-between gap-8 sm:gap-[43.78px] max-w-[517px] w-full mx-auto md:mx-0 order-1 md:order-2">
+            <div className="md:space-y-[43.78px]">
               <div className="space-y-3 sm:space-y-[13px]">
-                <SectionTitle className="text-center sm:text-left">Collect deposits using <br /> Payment link or embed</SectionTitle>
-                <SectionDescription className="text-center sm:text-left">Create deposit addresses in seconds to route payout to fiat or stablecoins.</SectionDescription>
+                <SectionTitle>Collect deposits using <br /> Payment link or embed</SectionTitle>
+                <SectionDescription>Create deposit addresses in seconds to route payout to fiat or stablecoins.</SectionDescription>
               </div>
 
-              <PrimaryButton className="w-full sm:w-auto py-4 sm:py-[20.25px] px-10">
+              <PrimaryButton className="w-full sm:w-auto py-4 sm:py-[20.25px] px-10 mx-auto md:mx-0 md:flex hidden!">
                 <span className="text-lg sm:text-[26.76px]! font-regular leading-[100%] font-tomato">View documentation</span>
               </PrimaryButton>
             </div>
-            <div>
-              <ul className="h-[2.63px] w-fit mx-auto sm:mx-0 flex gap-[2px]">
-                <li className="bg-primary w-[17.51px] h-full inline-block rounded-full" />
-                <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
-                <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
-              </ul>
+            <div className="hidden md:block">
+              <CarouselIndicator />
             </div>
+          </div>
+          <div className="md:hidden! center order-3 flex flex-col gap-14 mt-5">
+            <PrimaryButton className="w-full sm:w-auto py-4 sm:py-[20.25px] px-10 mx-auto md:mx-0">
+              <span className="text-lg sm:text-[26.76px]! font-regular leading-[100%] font-tomato">View documentation</span>
+            </PrimaryButton>
+
+            <CarouselIndicator />
           </div>
         </div>
       </Container>
       <Container>
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-8 py-10 sm:py-[70px] w-full max-w-[980px] mx-auto">
-          <div className="flex flex-col justify-between gap-14 sm:gap-0 w-full max-w-[500px] order-2 lg:order-1">
-            <div className="space-y-3 sm:space-y-[13px] w-full text-center sm:text-left">
+        <div className="flex flex-col md:flex-row items-stretch justify-between gap-8 py-10 sm:py-[70px] w-full max-w-[980px] mx-auto">
+          <div className="flex flex-col justify-between gap-14 md:gap-0 w-full max-w-[500px] mx-auto md:mx-0">
+            <div className="space-y-3 sm:space-y-[13px] w-full">
               <SectionTitle>Cross border and local payment settlement.</SectionTitle>
               <SectionDescription>Collect stablecoin from any chain and instantly convert to any local currency.</SectionDescription>
             </div>
-            <div className="">
-              <ul className="h-[2.63px] w-fit mx-auto sm:mx-0 flex gap-[2px]">
-                <li className="bg-primary w-[17.51px] h-full inline-block rounded-full" />
-                <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
-                <li className="bg-white w-[17.51px] h-full inline-block rounded-full" />
-              </ul>
+            <div className="hidden md:block">
+              <CarouselIndicator />
             </div>
           </div>
-          <div className="order-1 lg:order-2 flex items-center justify-center">
+          <div className="flex items-center justify-center sm:shrink-0">
             <img src={chooseCurrency} className="w-full max-w-[390px] h-auto" alt="Choose currency" />
+          </div>
+          <div className="md:hidden! center">
+            <CarouselIndicator />
           </div>
         </div>
       </Container>

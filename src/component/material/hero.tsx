@@ -23,7 +23,7 @@ export default function Hero({
         <div className="space-y-8 sm:space-y-[52.54px] px-2">
           <div className="text-center space-y-2 sm:space-y-[13px]">
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[87.56px] leading-tight sm:leading-[100.69px] font-semibold w-full max-w-[911px] mx-auto animate-hero-enter"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[87.56px] leading-tight lg:leading-[100.69px] font-semibold w-full max-w-[911px] mx-auto animate-hero-enter"
               style={{ animationDelay: "0ms" }}
             >
               {title}

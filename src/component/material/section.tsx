@@ -9,7 +9,7 @@ export function SectionTitle({ children, className = "" }: SectionTextProps) {
   return (
     <p
       className={cn(
-        "text-2xl sm:text-[36px] lg:text-[49px] leading-[100%] font-tomato",
+        "text-2xl sm:text-4xl md:text-[40px] lg:text-[49px] leading-[100%] font-tomato text-center md:text-left",
         { [className]: !!className }
       )}
     >
@@ -22,7 +22,7 @@ export function SectionDescription({ children, className = "" }: SectionTextProp
   return (
     <p
       className={cn(
-        "text-base sm:text-xl lg:text-[29px] leading-[100%] font-tomato text-white/40",
+        "text-base sm:text-xl md:text-[24px] lg:text-[29px] leading-[100%] font-tomato text-white/40 text-center md:text-left",
         { [className]: !!className }
       )}
     >

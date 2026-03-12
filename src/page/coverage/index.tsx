@@ -17,9 +17,9 @@ export default function Coverage() {
       />
       <Container contentClassName="px-0 bg-surface-elevated">
         <div className="w-full max-w-[945px] py-10 sm:py-[65px] flex flex-col lg:flex-row items-start justify-between gap-2 sm:gap-8 mx-auto px-4 lg:px-0">
-          <SectionTitle className="max-w-[482px] text-center sm:text-left w-full">Skip the high fees and bad rates.</SectionTitle>
+          <SectionTitle className="max-w-[482px] w-full">Skip the high fees and bad rates.</SectionTitle>
           <div className="flex flex-col items-center sm:items-start gap-6 sm:gap-[26.27px] w-full max-w-[376px] lg:w-[376px] mx-auto sm:mx-0">
-            <SectionDescription className="text-center sm:text-left w-full">
+            <SectionDescription className="w-full">
               Everything you need to send and collect stablecoins.
             </SectionDescription>
             <div className="w-full sm:w-auto">

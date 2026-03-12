@@ -41,15 +41,15 @@ export default function Header() {
 
   return (
     <Container>
-      <div className="h-16 md:h-[120px] center">
-        <div className="flex justify-between items-center w-full max-w-[1100px] mx-auto gap-3 min-h-12 md:h-[56.91px]">
+      <div className="h-16 lg:h-[120px] center">
+        <div className="flex justify-between items-center w-full max-w-[1100px] mx-auto gap-3 min-h-12 lg:h-[56.91px]">
           {/* Logo */}
-          <div className="bg-primary-hover w-10 h-10 md:w-[61.29px] md:h-[56.91px] shrink-0 rounded-[8px] sm:rounded-[12.62px] center">
-            <img src={logo} alt="Switch" className="size-5 md:size-[35px]" />
+          <div className="bg-primary-hover w-10 h-10 lg:w-[61.29px] lg:h-[56.91px] shrink-0 rounded-[8px] sm:rounded-[12.62px] center">
+            <img src={logo} alt="Switch" className="size-5 lg:size-[35px]" />
           </div>
 
           {/* Desktop nav – visible from md up */}
-          <ul className="hidden md:flex bg-surface-elevated text-base h-full rounded-[15.76px] border border-secondary p-[6.13px] items-center gap-[8.76px] justify-center w-fit">
+          <ul className="hidden lg:flex bg-surface-elevated text-base h-full rounded-[15.76px] border border-secondary p-[6.13px] items-center gap-[8.76px] justify-center w-fit">
             {navItems.map((item, i) => {
               const isFirst = i === 0;
               const isLast = i === navItems.length - 1;
@@ -81,7 +81,7 @@ export default function Header() {
           </ul>
 
           {/* Mobile: menu button only (Open app is in the right slot below) */}
-          <div className="flex md:hidden shrink-0">
+          <div className="flex lg:hidden shrink-0">
             <button
               type="button"
               onClick={() => setMenuOpen((o) => !o)}
@@ -98,13 +98,13 @@ export default function Header() {
           </div>
 
           {/* Open app – single button, right side, responsive sizing */}
-          <div className="hidden md:block h-full">
+          <div className="hidden lg:block h-full">
             <button
               type="button"
-              className="bg-primary-hover cursor-pointer text-primary center gap-2 md:gap-[7.66px] text-sm md:text-base px-4 md:px-[26.25px] h-9 md:h-full! shrink-0 rounded-[15px] border-0 font-inherit"
+              className="bg-primary-hover cursor-pointer text-primary center gap-2 lg:gap-[7.66px] text-sm lg:text-base px-4 lg:px-[26.25px] h-9 lg:h-full! shrink-0 rounded-[15px] border-0 font-inherit"
             >
-              <BoxIcon className="size-4 md:size-5 shrink-0" />
-              <span className="text-sm md:text-lg whitespace-nowrap">Open app</span>
+              <BoxIcon className="size-4 lg:size-5 shrink-0" />
+              <span className="text-sm lg:text-lg whitespace-nowrap">Open app</span>
             </button>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function Header() {
       {/* Mobile menu overlay + panel */}
       <div
         className={cn(
-          "fixed inset-0 z-50 md:hidden",
+          "fixed inset-0 z-50 lg:hidden",
           menuOpen ? "visible" : "invisible"
         )}
         aria-hidden={!menuOpen}
