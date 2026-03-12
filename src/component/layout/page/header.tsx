@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import logo from "@/assets/logo/lime.png";
 import {
   LightIcon,
@@ -20,8 +20,14 @@ const navItems = [
   { icon: DocsIcon, label: "Documentation" },
 ] as const;
 
+const STICKY_SCROLL_THRESHOLD = 80;
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+  const [stickyRevealed, setStickyRevealed] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (menuOpen) {
@@ -34,14 +40,36 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      const shouldStick = window.scrollY > STICKY_SCROLL_THRESHOLD;
+      if (shouldStick && !isSticky && headerRef.current) {
+        setHeaderHeight(headerRef.current.getBoundingClientRect().height);
+      }
+      setIsSticky(shouldStick);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isSticky]);
+
+  useLayoutEffect(() => {
+    if (!isSticky) {
+      setStickyRevealed(false);
+      return;
+    }
+    const id = requestAnimationFrame(() => {
+      requestAnimationFrame(() => setStickyRevealed(true));
+    });
+    return () => cancelAnimationFrame(id);
+  }, [isSticky]);
+
   const closeMenu = () => setMenuOpen(false);
 
   const navLinkClass =
     "center gap-[6.38px] px-[22.14px] rounded-[6.38px] border border-secondary cursor-pointer h-full [&.active]:bg-primary-hover [&.active]:text-primary [&.active]:border-none";
 
-  return (
-    <Container>
-      <div className="h-16 lg:h-[120px] center">
+  const headerContent = (
+    <div className="h-16 lg:h-[120px] center">
         <div className="flex justify-between items-center w-full max-w-[1100px] mx-auto gap-3 min-h-12 lg:h-[56.91px]">
           {/* Logo */}
           <div className="bg-primary-hover w-10 h-10 lg:w-[61.29px] lg:h-[56.91px] shrink-0 rounded-[8px] sm:rounded-[12.62px] center">
@@ -108,6 +136,29 @@ export default function Header() {
             </button>
           </div>
         </div>
+      </div>
+  );
+
+  return (
+    <>
+      {/* Spacer to prevent layout jump when header becomes fixed */}
+      {isSticky && <div style={{ height: headerHeight }} aria-hidden />}
+
+      <div
+        ref={headerRef}
+        className={cn(
+          "w-full transition-[transform,box-shadow,background-color] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
+          isSticky && [
+            "fixed top-0 left-0 right-0 z-40 border-b border-border",
+            "bg-surface-elevated/95 backdrop-blur-md",
+            "shadow-[0_4px_24px_-4px_rgba(0,0,0,0.25)]",
+            stickyRevealed ? "translate-y-0" : "-translate-y-full",
+          ]
+        )}
+      >
+        <Container>
+          {headerContent}
+        </Container>
       </div>
 
       {/* Mobile menu overlay + panel */}
@@ -182,6 +233,6 @@ export default function Header() {
           </nav>
         </aside>
       </div>
-    </Container>
+    </>
   );
 }
